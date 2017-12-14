@@ -18,7 +18,13 @@ namespace WebHost
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+            Microsoft.AspNetCore.WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(config =>
+                {
+                    config.AddJsonFile("json.json");
+                    config.AddCommandLine(args);
+                })
+            .UseUrls("http://locohost:8080")
                 .UseStartup<Startup>()
                 .Build();
     }

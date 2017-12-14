@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": {
+    "defaultConnectionString": "server=127.0.0.1;database=123;uid=sa;pwd=123" 
+  }
+}
